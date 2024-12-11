@@ -12,8 +12,8 @@ while cardnum > 0:
         digit = digit
     finalnum = finalnum + digit
 while anothernum > 0:
-    digit2 = anothernum % 10 #test4 = digit2
-    anothernum = anothernum // 100 #test5 = anothernum
+    digit2 = anothernum % 10 
+    anothernum = anothernum // 100 
     finalnum = finalnum + digit2
 if finalnum % 10 == 0:
     print('Valid')
