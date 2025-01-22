@@ -176,6 +176,8 @@ S3 = S1 * 52
 S4 = S2 + '3'
 S5 = S1 + 3
 
+print()
+
 #9
 print('whenever'.find('never'))
 print('whenever'.find('what'))
