@@ -152,4 +152,30 @@ S = input("Enter string :")
 RS = " "
 for ch in S:
     RS = ch + 2 + RS
-print(RS + S) 
+print(RS + S)
+
+print()
+
+#8
+S = "PURA VIDA"
+print(S[9] + S[9:15])
+
+S = "PURA VIDA"
+S1 = S[: 10] + S[10:]
+S2 = S[10] + S[-10]
+
+S = "PURA VIDA"
+S1 = S* 2
+S2 = S1[-19] + S1[-20]
+S3 = S1[-19:]
+
+S = "PURA VIDA"
+S1 = S[: 5]
+S2 = S[5:]
+S3 = S1 * 52
+S4 = S2 + '3'
+S5 = S1 + 3
+
+#9
+print('whenever'.find('never'))
+print('whenever'.find('what'))
