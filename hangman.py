@@ -1,7 +1,10 @@
-word = 'ca  t'
+import random
+randomwords = ['microphone', 'conventional', 'attatchment', 'nationalism', 'radiation', 'encyclopedia', 'misunderstanding', 'uncharacteristically', 'philosophical', 'counterproductive', 'incomprehensible', 'unbelievably', 'discombobulated', 'transcendental', 'disproportionately', 'unquestionably', 'revolutionary', 'individualistically', 'unintentionally', 'uncontrollably', 'extraordinarily', 'unrecognizable', 'unpredictable', 'incontrovertible', 'unbelievably']
+
+word = random.choice(randomwords)
 lives = 7
 count = (len(word))
-blanks = (count * '-')
+blanks = '-' * count
 answer = '-' * count
 guessed = ''
 letters = 'abcdefghijklmnopqrstuvwxyz'
@@ -91,11 +94,31 @@ while blanks != word and lives > 0:
     print('Letters guessed:', alphablanks)
     if guess in word:
         answer = answer[count:(count * 2)]
+    print()
     print('Word:', answer)
     print()
-    if word == answer:
-        print('Good job')
-        break
-    elif lives == 0:
-        print('You fail, the word was', word)
-        break
+    if word == answer or lives == 0:
+        if word == answer:
+            print('Good job')
+        elif lives == 0:
+            print('You fail, the word was', word)
+        playagain = input("Play again? ('y' for yes): ")
+        playagain = playagain.lower()
+        if playagain == 'y':
+            print('Okay chat')
+            word = random.choice(randomwords)
+            lives = 7
+            count = (len(word))
+            blanks = '-' * count
+            answer = '-' * count
+            guessed = ''
+            alphablanks = '-' * 26
+            for c in range(0, count):
+                if word[c] == ' ':
+                    blanks += ' '
+                else:
+                    blanks += blanks[c]
+            blanks = blanks[count:(count * 2)]
+        else:
+            print('Goodbye')
+            break
